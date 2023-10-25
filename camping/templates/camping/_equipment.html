@@ -1,0 +1,11 @@
+{% load static %}
+<div class="box-container">
+    <!-- Box -->
+    {%for item in items %}
+    <div class="box">
+            <img src="{{item.image.url}}" class="cart-img" alt="items.itemName"><br><br>
+            <h3>{{item.itemName}}</h3>
+            <span>${{item.price}}</span><br>   
+    </div>
+    {%endfor%}
+</div>

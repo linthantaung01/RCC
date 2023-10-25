@@ -1,0 +1,71 @@
+{% extends "_base.html" %} 
+{%load static%}
+
+
+{%block title%}
+Home
+{%endblock%}
+
+
+{%block content%}    
+   
+    <section class="first-page">
+        
+        <div class="first-text">
+            
+            <div class="first-container">
+                <h1>Explore the best adventure <br><span>CAMPING with us.</span> </h1>
+                    <p>
+                        Immerse yourself in nature's finest with our premium camping gear selection. Elevate your upcoming journey with our top-tier equipment, ensuring an unforgettable adventure. Our comprehensive range of camping gear is tailored to enhance every moment of your trip.
+                    </p>
+                    
+       
+                <a href="equipment.html" class="btn">Shop now</a>
+            </div>
+            <div class="second-container">
+                <img src="{%static 'camping/img/main-photo.jpg'%}" alt="main-photo" class="main-photo">
+            </div>
+        </div>
+    </section>
+
+    <div id="slideshow">
+        <p>It's time for a little excitement. Check out our website for a spot to see the stars at night.</p>
+        <div class="slide-wrapper">
+            <div class="slide">
+                <img src="{%static 'camping/img/slideshow-1.jpg'%}" alt="slideshow-1">
+            </div>
+            <div class="slide">
+                <img src="{%static 'camping/img/slideshow-2.jpg'%}" alt="slideshow-2">
+            </div>
+            <div class="slide">
+                <img src="{%static 'camping/img/slideshow-3.jpg'%}" alt="slideshow-3">
+            </div>
+        </div>
+    </div>
+
+    <!-- Latest furniture -->
+    <section class="cart">
+        <h3 class="sub-heading">Latest Products</h3>
+        <h1 class="heading">Equipment</h1>
+
+        {% include "camping/_equipment.html" %} 
+
+        
+    </section>
+    <section class="cart">
+        <h3 class="sub-heading">Latest Products</h3>
+        <h1 class="heading">Furniture</h1>
+
+        {% include "camping/_furniture.html" %} 
+
+
+        
+    </section>
+    <div class="media-section" id="#address">
+        <p>Location of Our Company</p>
+        <div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23906.910910592793!2d96.15002545386149!3d16.783274153401493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c1ecf2cca749bf%3A0xae1278dbd55dbca!2sBackpacks%204U!5e0!3m2!1sen!2smm!4v1691485664791!5m2!1sen!2smm" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>       
+    </div>
+
+{%endblock%}
