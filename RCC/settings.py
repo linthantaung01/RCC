@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-8ykrwmj)p2ic^k42#*%eln#=cpr4-8yed^qbsx)w9rs76@w!sa
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['linthantaung01.pythonanywhere.com']
 
 
 # Application definition
@@ -76,24 +76,23 @@ WSGI_APPLICATION = 'RCC.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
-     "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "CampingShop",
-        "USER": "postgres",
-        "PASSWORD": "root",
-        "HOST": "127.0.0.1",
-        "PORT": "5432",
-    }
-}
+         'default': {
+         'ENGINE': 'django.db.backends.sqlite3',
+         'NAME': BASE_DIR / 'db.sqlite3',
+         }
+ }
+
+#DATABASES = {
+ #    "default": {
+  #      "ENGINE": "django.db.backends.postgresql",
+   #     "NAME": "CampingShop",
+    #    "USER": "postgres",
+     #   "PASSWORD": "root",
+      #  "HOST": "127.0.0.1",
+       # "PORT": "5432",
+   # }
+#}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -130,6 +129,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = "/home/linthantaung01/RCC/camping/static"
 
 MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_URL = 'media/'
