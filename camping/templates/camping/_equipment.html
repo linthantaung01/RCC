@@ -3,8 +3,8 @@
     <!-- Box -->
     {%for item in items %}
     <div class="box">
-            <img src="{{item.image.url}}" class="cart-img" alt="items.itemName"><br><br>
-            <h3>{{item.itemName}}</h3>
+        <a href="{% url "item_detail" item.slug %}"> <img src="{{item.image.url}}" class="cart-img" alt="items.itemName"></a><br><br>
+        <a href="{% url "item_detail" item.slug %}"><h3>{{item.itemName}}</h3></a>
             <span>${{item.price}}</span><br>   
     </div>
     {%endfor%}

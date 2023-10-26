@@ -26,3 +26,21 @@ class Item(models.Model):
     def __str__(self) -> str:
         return f"{self.itemName}"
 
+
+
+
+class OrderDetail(models.Model):
+    item = models.ForeignKey( Item ,null=True, on_delete=models.SET_NULL, related_name="orderItem")
+    quantity = models.IntegerField()
+    total = models.DecimalField(max_digits=5, decimal_places=2)
+    status = models.IntegerField(default=0)
+
+class Order(models.Model):
+    username = models.CharField(max_length=100)
+    region = models.CharField(max_length=100)
+    city = models.CharField(max_length=100)
+    address = models.CharField(max_length=100)
+    phone = models.CharField(max_length=20)
+    email = models.EmailField()
+    order_detail = models.ManyToManyField(OrderDetail)
+    grand_total = models.DecimalField( max_digits=5, decimal_places=2)

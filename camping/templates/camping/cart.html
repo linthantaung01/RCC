@@ -1,0 +1,134 @@
+{%extends '_base.html'%}
+{% load static %}
+{% block title %}
+    Cart
+{% endblock title %}
+
+
+
+{%block content%}
+
+<div class="basket-page">
+    <div class="basket-head">
+      Shopping Cart
+    </div>
+    <div class="box-container2">
+        {%for order in orders %}
+        <div class="box">
+                <img src="{{order.item.image.url}}" class="cart-img" alt="order.item.itemName"> <br><br>
+                <h3>{{order.item.itemName}}</h3>
+                <span>Quantity: {{order.quantity}} </span><br>
+                <span>Total: ${{order.total}}</span><br><br>
+
+                <form method="POST" action="{% url "deleteOrder" %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="order_id" value="{{order.id}}">
+                    <button type="Submit" class="btn">Delete</button>
+                </form>
+        </div>
+        {%endfor%}
+    </div>
+    <div class="cart-total-container">
+        <h3>Total Amount of your cart</h3>
+        <div class="cart-section">
+            <div class="total">
+                <p>Total</p>
+                <p>${{total}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<h1 class="Info">Checkout Information</h1>
+<form method="post" action="{% url "create_order" %}" class="UserInfo" >
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td>
+                <label for="name">Name:</label>
+            </td>
+            <td>
+                <input type="text" id="name" name="name" required>
+            </td>
+        </tr>
+
+        <tr>
+            <td><label for="region">Region/State:</label></td>
+            <td>
+                <select id="region" name="region">
+                    <option value="Ayeyarwady">Ayeyarwady Region</option>
+                    <option value="Bago">Bago Region (Pegu Region)</option>
+                    <option value="Chin">Chin State</option>
+                    <option value="Kachin">Kachin State</option>
+                    <option value="Kayah">Kayah State</option>
+                    <option value="Kayin">Kayin State</option>
+                    <option value="Magway">Magway Region</option>
+                    <option value="Mandalay">Mandalay Region</option>
+                    <option value="Mon">Mon State</option>
+                    <option value="Rakhine">Rakhine State</option>
+                    <option value="Sagaing">Sagaing Region</option>
+                    <option value="Shan">Shan State</option>
+                    <option value="Tanintharyi">Tanintharyi Region (Tenasserim Region)</option>
+                    <option value="Yangon">Yangon Region (Rangoon Region)</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="city">City:</label>
+            </td>
+            <td>
+                <input type="text" id="city" name="city" required>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="address">Address:</label>
+            </td>
+            <td>
+                <input type="text" id="address" name="address" required>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="phone">Phone:</label>
+            </td>
+            <td>
+                <input type="tel" id="phone" name="phone" required onkeydown="onlyNum(event)">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="email">Email:</label>
+            </td>
+            <td>
+                <input type="email" id="email" name="email" required>
+            </td>
+        </tr>
+
+    </table><br><br>
+
+    <input type="submit" value="Submit" class="checkout">
+</form>
+   
+    
+
+<script>
+    function onlyNum(event) {
+        const input = event.key;
+        let phoneRegx = /^[0-9]+$/;
+        if (event.keyCode == 8) {
+            return;
+        } else if (!phoneRegx.test(input)) {
+            event.preventDefault();
+        }
+    }
+</script>
+{%endblock%}
+       
+ 

@@ -274,7 +274,6 @@ section {
 
 .box-container {
     max-width: 1080px;
-    margin: auto;
     padding-left: 25px;
     padding-right: 25px;
 
@@ -411,6 +410,16 @@ section {
 ::placeholder {
     color: white;
 }
+
+.sidebar {
+    flex: 1;
+    padding: 20px;
+    position: absolute;
+    border-right: 1px solid #ccc;
+    height: 100%;
+
+}
+
 
 /* tablet */
 @media all and (max-width: 645px) {
@@ -948,6 +957,7 @@ div {
             justify-content: center;
             flex-wrap: wrap;
             gap: 5%;
+            margin-left: 150px;
         }
 
         .review-container {
@@ -1116,4 +1126,117 @@ div {
         height: 30px;
         align-items: center;
     }
+}
+
+
+.item-main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-top: 100px;
+}
+
+
+.item-card-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 80%;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+.content-item {
+    flex: 3;
+    padding: 0 20px;
+}
+
+
+.item-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.item-img-style {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.item-detail p {
+    margin-bottom: 10px;
+}
+
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.box a h3 {
+    color: black;
+}
+
+.box p a {
+    color: #0056b3;
+}
+
+
+
+#quantity {
+    width: 50px;
+    height: 25px;
+    text-align: center;
+}
+
+.Info,
+.UserInfo {
+    margin-top: 40px;
+    text-align: center;
+}
+
+#region,
+#name,
+#city,
+#phone,
+#email,
+#address {
+    width: 200px;
+    height: 30px;
+}
+
+
+
+.checkout {
+    padding: 10px 40px;
+    text-align: center;
+    background: var(--main-color);
+    color: #fff;
+}
+
+.UserInfo table {
+    width: 30%;
+    margin: 0 auto;
+
+}
+
+.UserInfo td {
+    padding: 10px;
+    text-align: left;
 }

@@ -1,13 +1,14 @@
-$(function(){
-    
-    $(".toggle").on("click",function(){
-        if ($(".item").hasClass("active")){
+$(function () {
+
+    $(".toggle").on("click", function () {
+        if ($(".item").hasClass("active")) {
 
             $(".item").removeClass("active");
-        } else{
+        } else {
             $(".item").addClass("active");
         }
-   
+
     })
 
 })
+

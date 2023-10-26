@@ -12,18 +12,8 @@
         <ul class="navbar">
             <li class="logo"><a href="{% url "home" %}" class="logo-text">RCC</a></li>
             <li class="item"><a href="{% url "home" %}">Home</a></li>
-            <li class="item primary"><a href="package.html">Everything</a></li>
-            {% for category in categories %}
-            <li class="item">
-                {% comment %} <a href="{% url "category_detail.html" category.slug %}">
-                    {{ category.name }}    
-                </a> {% endcomment %}
-            </li>
-            
-            {%endfor%}
-
-            <li class="item"><a href="review.html">Review</a></li>
-            <li class="item primary"><a href="basket.html" >Cart</a></li>
+            <li class="item primary"><a href="{% url "everything_item" %}">Category</a></li>
+            <li class="item primary"><a href="{% url "cartInfo" %}" >Cart</a></li>
            
             <li class="toggle">
                 <i class='bx bx-menu ' id="menu-icon"></i>
@@ -40,24 +30,13 @@
                 <div class="col-footer">
                     <h3>RCC</h3>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="equipment.html">Equipment</a></li>
-                        <li><a href="furniture.html">Furniture</a></li>
-                        <li><a href="review.html">Review</a></li>
-                        <li><a href="basket.html">Basket</a></li>
-                        <li><a href="package.html">Package</a></li>
+                        <li class="item"><a href="{% url "home" %}">Home</a></li>
+                        <li class="item primary"><a href="{% url "everything_item" %}">Category</a></li>
+                        <li class="item primary"><a href="{% url "cartInfo" %}" >Cart</a></li>
                     </ul>
                 </div>
                 
-                <div class="col-footer">
-                    <h3>Products</h3>
-                    <ul class="footer-list">
-                        <li><a href="equipment.html">Tent</a></li>
-                        <li><a href="equipment.html">Backpack</a></li>
-                        <li><a href="furniture.html">Chair</a></li>
-                        <li><a href="furniture.html">Table</a></li>
-                    </ul>
-                </div>
+        
                 
                 <div class="col-footer">
                     <h3>Contact Us</h3>

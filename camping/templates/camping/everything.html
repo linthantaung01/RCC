@@ -1,0 +1,42 @@
+{%extends '_base.html'%}
+{%load static%}
+
+{% block title %}
+    Category
+{% endblock title %}
+
+
+
+{%block content%}
+    <div class="package-container2">
+        <div class="sidebar">
+            <h4>Category</h4>
+            <hr/>
+            <ul>
+                <li><a href="{%url 'everything_item'%}">All</a></li>
+                {% for category in categories %}
+                    <li>
+                        <a href="?category={{ category.name }}">{{ category.name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="title">
+            <h5> {%if request.GET.category %}
+                    {{request.GET.category}}
+                {%else%}
+                    All Items
+                {% endif %}
+            </h5>
+        </div>
+        {%include 'camping/item_list.html'  %}
+    </div>
+    <div class="media-section">
+        <p>Camping shop walkthrough</p>
+        <div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/1hwyvtLRjnQ" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>     
+        </div>
+       
+    </div>
+    
+{%endblock%}
